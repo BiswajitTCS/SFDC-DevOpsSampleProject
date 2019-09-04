@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForAllPageTypes"> 
+    Hellow World from VsCode 
+</aura:component>
