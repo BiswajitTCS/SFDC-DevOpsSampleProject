@@ -28,7 +28,7 @@ node {
              rc = bat returnStdout: true, script: "sfdx force:source:deploy --manifest manifest/package.xml -u ${HUB_ORG}"
             printf rc    
         }
-        chatterPost body: "This is a Chatter post from a pipeline! ${env.JOB_NAME} ${env.BUILD_DISPLAY_NAME}", credentialsId: 'JENKINS_CREDENTIAL_ID', recordId: 'SOME_RECORD_ID' 
+        postToChatter "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)" 
         //stage('Push To Test Org') {
             //rc = bat returnStatus: true, script: "sfdx force:source:push --targetusername ${SFDC_USERNAME}"
             //if (rc != 0) {
